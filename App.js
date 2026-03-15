@@ -1,4 +1,4 @@
-const BACKEND = "https://weather-server-side.onrender.com";
+const BACKEND = "https://weather-app-cg5a.onrender.com";
 
 const weatherContainer = document.querySelector('#weather-container')
 const forecastContainer = document.querySelector('#forecast')
