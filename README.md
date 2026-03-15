@@ -99,4 +99,4 @@ getData(await weatherData.json(), await forecastData.json());
 ## Credits
 
 - OpenWeatherApi for weather data.
-- maxmind GeoLite2-City.mmdb for geolocation.
+- maxmind GeoLite2-City.mmdb for geolocation data.
