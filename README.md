@@ -46,8 +46,10 @@ This is an interactive weather dashboard app that combines real-time geolocation
 ```js
     API_key=your openWeatherApi api key
 ```
-5. **Serve the static files and backend.**
 6. **Open in your browser.**
+```bash
+    http://localhost:5173/
+```
 
 ## how it works
 
@@ -61,12 +63,14 @@ This is an interactive weather dashboard app that combines real-time geolocation
 - **Forecast Panel:** Scrollable list of forecast entries with icons and details.
 - **Charts:** Visualizes metrics over forecast period.
 - **Search Bar:** Animated, responsive; enter city name to update data.
+- **Fontawesome kits:** [Fontawesome](https://fontawesome.com/kits).
+- **Animated loading icon:** [loading.io](https://loading.io/)
 
 ## Technologies
 
 - **Chart.js:** Graphical data visualization.
 - **OpenWeatherMap API:** Weather & forecast data.
-- **maxmind:** IP-based geolocation.
+- **maxmind:** IP-based geolocation database [GeoLite2-City.mmdb](https://www.maxmind.com/).
 - **Vanilla JS:** All logic and interactivity.
 
 ## Customization
