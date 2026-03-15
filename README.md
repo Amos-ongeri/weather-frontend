@@ -1,6 +1,6 @@
 # Weather App
 
-This is an interactive weather dashboard app that combines real-time geolocation, weather, and forecast data with visualization using and [Chart.js](https://www.chartjs.org/). It makes use of multiple APIs to provide current weather and forecast information for your location or any city you search.
+This is an interactive weather dashboard app that combines real-time geolocation, weather, and forecast data with visualization using [Chart.js](https://www.chartjs.org/). It makes use of multiple APIs to provide current weather and forecast information for your location or any city you search.
 
 ## Features
 
