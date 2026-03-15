@@ -42,9 +42,13 @@ This is an interactive weather dashboard app that combines real-time geolocation
     npm run dev
 ```
 4. **Add OpenWeatherApi key to weatherApi.**
+*create .env file in root directory*
+```js
+    VITE_BACKEND_URL=your backend url //e.g https://x.onrender.com
+```
 *create .env file in weatherApi*
 ```js
-    API_key=your openWeatherApi api key
+    API_KEY=your openWeatherApi api key
 ```
 6. **Open in your browser.**
 ```bash
