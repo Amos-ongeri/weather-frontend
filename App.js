@@ -1,5 +1,3 @@
-const BACKEND = "https://weather-app-cg5a.onrender.com";
-
 const weatherContainer = document.querySelector('#weather-container')
 const forecastContainer = document.querySelector('#forecast')
 const content = document.querySelector('#content')
@@ -10,7 +8,7 @@ const reload = document.querySelector('#reload')
 const GeoLocation = async ()=>{
   //current location
   try{
-    const geoRes = await fetch(`${BACKEND}/api/geolocation`)
+    const geoRes = await fetch(`${process.env.BACKEND_URL}/api/geolocation`)
 
     if(!geoRes.ok){
         throw new Error("an error occurred");
@@ -30,12 +28,12 @@ const searching = async (city)=>{
     loading.style.display = 'block';
     content.style.display = 'none';
     //weather data by search
-    const searchRes = await fetch(`${BACKEND}/api/weather?city=${city}`);
+    const searchRes = await fetch(`${process.env.BACKEND_URL}/api/weather?city=${city}`);
 
     if(!searchRes.ok) alert('something went wrong, please enter a valid city name')
 
     //forecast data
-    const forecastRes = await fetch(`${BACKEND}/api/forecast?city=${city}`)
+    const forecastRes = await fetch(`${process.env.BACKEND_URL}/api/forecast?city=${city}`)
 
     if(!forecastRes.ok) throw new Error("couldn't fetch data");
 
@@ -62,10 +60,10 @@ const maxmind = async ()=>{
     content.style.display = 'none';
     const geoData = await GeoLocation()
   // Get weather data from backend
-    const res = await fetch(`${BACKEND}/api/current?lat=${geoData?.location?.latitude}&lon=${geoData?.location?.longitude}`);
+    const res = await fetch(`${process.env.BACKEND_URL}/api/current?lat=${geoData?.location?.latitude}&lon=${geoData?.location?.longitude}`);
     if (!res.ok) throw new Error("Failed to fetch weather");
 
-    const forecastRes = await fetch(`${BACKEND}/api/forecast?city=${geoData?.country?.names?.en}`);
+    const forecastRes = await fetch(`${process.env.BACKEND_URL}/api/forecast?city=${geoData?.country?.names?.en}`);
     if (!forecastRes.ok) throw new Error("Failed to fetch forecast");
 
     const forecastData = await forecastRes.json();
