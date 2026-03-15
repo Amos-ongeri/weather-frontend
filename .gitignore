@@ -3,3 +3,10 @@ node_modules/
 
 # lock file
 package-lock.json
+
+#node-modules
+weatherApi/node_modules/
+
+#env files
+*.env
+weatherApi/.env
