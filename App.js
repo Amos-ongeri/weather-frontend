@@ -95,25 +95,25 @@ const getData = (weather, forecast) => {
           <h3 class="weather-title">${weather.name}, ${weather.sys.country}</h3>
 
           <div id="weather-details">
-              <div style="display:flex;align-items:center; margin-right: 5px;"><img style="width:60px;" src=${WeatherIcon}> <p>${weather.weather[0].description}</p></div>
+              <div style="display:flex;align-items:center; margin-right: 5px;"><img loading="lazy" style="width:60px;" src=${WeatherIcon}> <p>${weather.weather[0].description}</p></div>
               <div style="display:flex;">
-                <img style="width:30px; height:30px;margin-right:5px;align-items:center;" src="temperature.png"/>
+                <img loading="lazy" style="width:30px; height:30px;margin-right:5px;align-items:center;" src="temperature.png"/>
                 <p>temp: ${weather.main.temp.toFixed(0)} &deg;C<br></p>
               </div>
               <div style="display:flex;">
-                <img style="width:30px; height:30px;margin-right:5px;align-items:center;" src="clouds.png"/>
+                <img loading="lazy" style="width:30px; height:30px;margin-right:5px;align-items:center;" src="clouds.png"/>
                 <p>cloud cover: ${weather.clouds.all}%</p>
               </div>
               <div style="display:flex;">
-                <img style="width:30px; height:30px;margin-right:5px;align-items:center;" src="humidity.png"/>
+                <img loading="lazy" style="width:30px; height:30px;margin-right:5px;align-items:center;" src="humidity.png"/>
                 <p>Humidity: ${weather.main.humidity}%<br></p>
               </div>
               <div style="display:flex;">
-                <img style="width:30px; height30px;margin-right:5px;align-items:center;" src="wind.png"/>
+                <img loading="lazy" style="width:30px; height30px;margin-right:5px;align-items:center;" src="wind.png"/>
                 <p>Wind speed: ${(weather.wind.speed * 3.6).toFixed(1)}km/h<br></p>
               </div>
               <div style="display:flex;align-items:center;">
-                <img style="width:30px; height:30px;margin-right:5px;" src="atmospheric.png"/>
+                <img loading="lazy" style="width:30px; height:30px;margin-right:5px;" src="atmospheric.png"/>
                 <p>pressure: ${(weather.main.pressure)}hpa</p>
               </div>
           </div>
@@ -131,7 +131,7 @@ const getData = (weather, forecast) => {
       <div class="forecastInfo" style="min-width: 300px;min-height: 70px;margin: 0 5px 0 0;border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color: rgb(51, 0, 51);color:white;">
         <p id='time'>${dateStr}</p>
         <div style="display:flex; align-items:center; justify-content:start;">
-        <img style="width: 65px; height: 65px;" src=${forecastIcon}>
+        <img loading="lazy" style="width: 65px; height: 65px;" src=${forecastIcon}>
         <p>${f.weather[0].description}</p>
         </div>
           <div>
