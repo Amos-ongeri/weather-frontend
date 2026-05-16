@@ -19,14 +19,18 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 }
-main{
+#content{
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    place-items: center;
     width: 100%;
     height: 100vh;
     overflow: auto;
+
 }
 #page{
-    display: flex;
-    width: 100%;
+    /* display: flex; */
+    width: 80%;
     min-height: 100%;
 }
 #weather{
@@ -49,6 +53,7 @@ main{
     width: 100%;
     height: 40%;
     overflow: hidden;
+    font-weight: bold;
 }
 #line{
     width: 550px;
@@ -127,9 +132,11 @@ main{
 }
 #search{
     position: relative;
+    width: 100%;
 }
 #search > input{
     height: 40px;
+    width: 80%;
     border: none;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -270,7 +277,6 @@ main{
         padding: 5px 0 5px 50px;
         margin-top: 10px;
         font-size: x-large;
-        background: #00000083;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
@@ -326,7 +332,7 @@ main{
     }
     #search > input{
         height: 60px;
-        width: 400px;
+        width: 80%;
         border: none;
         font-size: large;
         border-radius: 5px;
@@ -407,7 +413,6 @@ main{
         padding: 5px 0 0 50px;
         margin-top: 10px;
         font-size: x-large;
-        background: #00000083;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
@@ -539,7 +544,7 @@ main{
         font-size: x-large;
     }
 }
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
     #wrapper{
         flex: 4;
         height: 100%;
@@ -585,7 +590,6 @@ main{
         padding: 5px 0 5px 50px;
         margin-top: 10px;
         font-size: large;
-        background: #00000083;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
@@ -691,8 +695,9 @@ main{
         font-size: large;
     }
 }
-@media screen and (min-width: 769px) and (max-width:1024px){
+@media screen and (min-width: 769px) and (max-width:1023px){
     #page{
+        width: 100%;
         min-height: 100%;
         display: block;
         padding-bottom: 15px;
@@ -724,7 +729,6 @@ main{
         padding: 5px 0 0 50px;
         margin-top: 10px;
         font-size: x-large;
-        background: #00000083;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
@@ -889,6 +893,7 @@ main{
 }
 @media screen and (max-width: 360px){
     #page{
+        width: 100%;
         min-height: 100%;
         display: block;
         padding-bottom: 15px;
@@ -912,7 +917,6 @@ main{
         padding: 5px 0 0 5px;
         margin-top: 10px;
         font-size: x-large;
-        background: #00000083;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
@@ -1050,6 +1054,7 @@ main{
         height: 60%;
     }
     #page{
+        width: 100%;
         min-height: 100%;
         display: block;
         padding-bottom: 15px;
@@ -1065,7 +1070,6 @@ main{
         padding: 5px 0 0 5px;
         margin-top: 10px;
         font-size: large;
-        background: #00000083;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
@@ -1207,7 +1211,6 @@ main{
         padding: 5px 0 0 5px;
         margin-top: 5px;
         font-size: large;
-        background: #00000083;
         border-radius: 3px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;

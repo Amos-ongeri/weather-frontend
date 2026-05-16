@@ -153,98 +153,11 @@ const getData = (weather, forecast) => {
     forecastContainer.insertAdjacentHTML("beforeend", forecastHTML);
   })
 
-  const ctx = document.getElementById('plot');
-  const ctx1 = document.getElementById('plot1');
-
   const labels = forecast?.list.map(f => {
     const date = new Date(f.dt * 1000);
     return date.toLocaleTimeString([], { hour: "2-digit"});
   });
 
-  const tempData = forecast?.list.map(f => f.main.temp);
-  const humidityData = forecast?.list.map(f => f.main.humidity);
-
-  const Graph = (element,type) => {
-    const id = element.id;
-    if (charts[id]) {
-      charts[id].data.labels = labels;
-      charts[id].update();
-    } else {
-      charts[id] = new Chart(element, {
-        type: type,
-        data: {
-          labels,
-          datasets: [
-            type == 'line' ? { label: 'Temperature', data: tempData, backgroundColor: "rgb(255, 99, 71)", fill: false,borderColor: 'rgb(255, 99, 71,0.6)', tension: 0.7 } :
-            { label: 'Humidity', data: humidityData, backgroundColor: "rgb(2, 184, 230)", fill: false, tension: 0.4 }
-          ]
-        },
-        options: {
-          responsive: true,
-          //true - keeps the aspect ratio (usually 2:1 width:height)
-          maintainAspectRatio: false, //Chart.js will match container width & height exactly
-          plugins: {
-            legend: {
-            display: true,
-            text: 'Weather Forecast',
-            font: { size: 18, weight: 'bold' },
-            labels:{
-              generateLabels: chart => {   // fully control legend box
-                return chart.data.datasets.map((dataset, i) => ({
-                  text: dataset.label,
-                  fillStyle: dataset.borderColor || dataset.backgroundColor,
-                  strokeStyle: 'transparent', // remove border
-                  lineWidth: 0,
-                  hidden: !chart.isDatasetVisible(i),
-                  fontColor: 'white', //color of legend text
-                  datasetIndex: i
-                }));
-              }
-            }
-            }
-          },
-          scales: {
-            x: {
-              alignToPixels: true,
-              ticks: {
-                color: 'white',      // X-axis tick labels color
-                font: {
-                  size: 10,
-                  weight: 'bold'
-                }
-              },
-              grid: {
-                color: 'rgb(176, 220, 224)', // x-axis grid line color
-                borderColor: 'rgb(176, 220, 224)',
-                lineWidth: window.innerWidth >= 1440 ? 2.5 : 1 // thickness of grid lines depending on pixelRatio of device
-              }
-            },
-            y: {
-              alignToPixels: true,
-              ticks: {
-                color: 'white',      // Y-axis tick labels color
-                font: {
-                  size: 10,
-                  weight: 'bold'
-                }
-              },
-              grid: {
-                color: 'rgb(176, 220, 224)', // y-axis grid line color
-                borderColor: 'rgb(176, 220, 224)',
-                lineWidth: window.innerWidth >= 1440 ? 2.5 : 1 // thickness of grid lines depending on pixelRatio of device
-              }
-            }
-          }
-        }
-      });
-    }
-  };
-  const graphData = [
-    {element: ctx, type: 'line'},
-    {element: ctx1, type: 'bar'}
-  ]
-
-  graphData.forEach(item => Graph(item.element, item.type))
 }
 const scroll_right = ()=>{
   if(window.innerWidth <= 320)
